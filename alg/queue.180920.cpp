@@ -3,37 +3,29 @@
 
 using namespace std;
 
-int head, last, S[10000], n, q, a, f[10000], lst, t, k, l, arr[10000][2];
+int last, S[10000], n, q, a, f[10000], lst, t, k, l, arr[10000][2];
 string s;
 
-// def struct
-typedef struct RR{
-    string name[10000];
-    int tm[10000];
-} rr;
+typedef struct Input{
+    char name[10000];
+    int time[10000];
+};
 
-rr rob;
+struct Input ipt;
 
 // add to tail
-void enQ(string p,int x){
-    rob.name[++last]=p;
-    rob.tm[++last]=x;
+void enqueue(int x){
+    arr[++last][2]=x;
 }
 
-// void finque(int x){
-//     f[++lst]=x;
-// }
+void finque(int x){
+    f[++lst]=x;
+}
 
 // get head
-string deQ_n(){
-    return rob.name[0];
+int dequeue(){
+    return arr[2][0];
 }
-
-int deQ_t(){
-    return rob.tm[++head];
-}
-
-
 
 int main(){
 
@@ -42,24 +34,19 @@ int main(){
     // cout << "n=" << n << endl;
     // cout << "q=" << q << endl;
     // get to array
-    int cp = n;
     while(n>0){
         cin >> s >> a;
-        enQ(s,a);
+        enqueue(a);
         n--;
     }
 
-    // cout << dequeue() << endl;
+    cout << dequeue() << endl;
 
-    // for(int i = 1; i <= last; i++)
-    // {
-    while(cp+1>0){
-        cout << deQ_t() << endl;
-        cp--;
+    for(int i = 2; i <= last+1; i++)
+    {
+        cout << arr[i][0] << endl;
     }
-    // }
 
-    // cout << inp.name[i] << endl;
 
 
     // process round robin
