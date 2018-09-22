@@ -16,6 +16,6 @@ int main()
    obj.set(num);
    cout << obj.get() << endl;
 
-   return 0; 
+   return 0;
 
 }
