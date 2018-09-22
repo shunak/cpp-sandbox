@@ -18,6 +18,6 @@ int main()
         cout << "num[" << i << "]=" << i << " ";
     }
     cout << endl;
-    delete num;
+    delete num; //release memory alloc.
     return 0;
 }
