@@ -20,25 +20,20 @@ void enQ(string p,int x){
     rob.tm[++last]=x;
 }
 
-// void finque(int x){
-//     f[++lst]=x;
-// }
-
-// get head
+// get name
 string deQ_n(){
-    return rob.name[0];
+    return rob.name[++head];
 }
 
+// get time
 int deQ_t(){
     return rob.tm[++head];
 }
 
-
-
 int main(){
 
     // int n,q;
-    cin >> n >> q;
+    // cin >> n >> q;
     // cout << "n=" << n << endl;
     // cout << "q=" << q << endl;
     // get to array
@@ -49,12 +44,19 @@ int main(){
         n--;
     }
 
+    // int* a = new int[10];
+
+    // for(int i = 0; i < 10; i++)
+    // {
+    //     printf("%d\n",a[i]);
+    // }
+
     // cout << dequeue() << endl;
 
     // for(int i = 1; i <= last; i++)
     // {
     while(cp+1>0){
-        cout << deQ_t() << endl;
+        cout << rob.name[cp] << endl;
         cp--;
     }
     // }
@@ -66,7 +68,7 @@ int main(){
 
         // if (a-q>0) {
         //     t+=q;
-        //     enqueue(a-q);
+            // enqueue(a-q);
         // }else if(a-q<=0){
         //     t+=q;
         //     finque(a+t);
