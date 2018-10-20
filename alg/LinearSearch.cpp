@@ -1,47 +1,66 @@
+#include <cstdio>
 #include <iostream>
+#include <cstdio>
 using namespace std;
+
+
+// void si
+
+
+
+
+
+int linearSearch(int q, int n ,int *S ,int *T){
+
+    int counter=0;
+
+    for(int i = 0; i < q; i++)
+    {
+
+        for(int j = 0; j < n; j++)
+        {
+            
+            if (T[i]==S[j]) {
+                
+                counter++;
+                break;
+            }
+        }
+
+    }
+
+    return counter;
+}
+
 
 int main(){
 
 int n;
-int S[10^9];
+int S[10000+1];
 int q;
-int T[10^9];
+int T[500 + 1];
 
-cin >> n;
+scanf("%d",&n);
 
-// cout << n << endl;
-while(n>0){
-
-    cin >> S[n];
-    n--;
-
+for(int i = 0; i < n; i++)
+{
+    scanf("%d",&S[i]);
 }
 
-while(n>0){
-
-cout << S[n] << endl;
-
-n--;
-
+scanf("%d",&q);
+for(int i = 0; i < q; i++)
+{
+    scanf("%d",&T[i]);
 }
 
+int res;
 
+res = linearSearch(q,n,S,T);
 
-
-
-
-
-// while(q>0){
-//     cin >> T[q];
-//     q--;
-// }
-
-
-// cout << T[0] << endl;
-
+printf("%d\n",res);
 
 return 0;
+
 
 }
 
