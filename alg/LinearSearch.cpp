@@ -1,14 +1,6 @@
 #include <cstdio>
 #include <iostream>
-#include <cstdio>
 using namespace std;
-
-
-// void si
-
-
-
-
 
 int linearSearch(int q, int n ,int *S ,int *T){
 
