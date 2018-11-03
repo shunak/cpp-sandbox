@@ -5,7 +5,7 @@
     int n, S[1000000], q, T[50000], A[500000], ans;
 
 
-    int bins(int A[500000], int key){
+    int binarySearch(int A[500000], int key){
         int left = 0, right = n, mid = 0, count=0;
 
         while (left < right){
@@ -13,7 +13,7 @@
             mid = (left + right)/2;
 
             if(A[mid]==key){
-                
+
                 return 1;
 
             }else if(A[mid]>key){
@@ -49,7 +49,7 @@
     for(int i = 0; i < q; i++)
     {
         scanf("%d",&T[i]);
-        ans += bins(S,T[i]);
+        ans += binarySearch(S,T[i]);
     }
 
     printf("%d\n",ans);
