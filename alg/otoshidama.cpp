@@ -15,11 +15,12 @@ int main(){
 
     printf("%d %d %d\n", x, y, z);
 
+    printf("%d\n",Y%10000);
+
+
     return 0;
 
 }
-
-
 
 
 
