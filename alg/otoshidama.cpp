@@ -4,14 +4,19 @@
 
 int N, Y, x, y, z, rest;
 
-
 int main(){
     
     scanf("%d %d",&N, &Y);
 
-    x = N * 10000;
-    y = N * 5000;
-    z = N * 1000;
+    N = x + y + z;
+    Y = 10000*x+5000*y+1000*z;
+
+    // x = N * 10000;
+    // // x = 10 * N * 1000;
+    // y = N * 5000;
+    // // y = 5 * N * 1000;
+    // z = N * 1000;
+    // // z = 1 * N * 1000;
 
     printf("%d %d %d\n", x, y, z);
 
@@ -22,7 +27,6 @@ int main(){
 
     if (rest > 500) {
 
-        // rest = N/2-Y/1000 + N/2-Y/5000;
         rest = N-Y/1000;
         
         if (rest<0) {
@@ -33,7 +37,8 @@ int main(){
         
 
     }
-
+    
+    // どう均等にわけるか？
 
 
     printf("%d\n",rest);
