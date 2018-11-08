@@ -10,13 +10,13 @@ int main(){
 
     
 // 全ての組み合わせを求める
-for(int x = 0; x < N; x++)
+for(int x = 0; x <= N; x++)
 {
     
-    for(int y = 0; y < N; y++)
+    for(int y = 0; y <= N; y++)
     {
 
-        for(int z = 0; z < N; z++)
+        for(int z = 0; z <= N; z++)
         {
 
             sum = x+y+z;
