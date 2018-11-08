@@ -21,27 +21,28 @@ for(int x = 0; x <= N; x++)
 
             sum = x+y+z;
             otoshidama = 10000*x+5000*y+1000*z;
-            
+
             if (N==sum && Y==otoshidama) {
 
                 printf("%d %d %d\n",x,y,z);
+                count++;
+                break;
 
             }
-            
 
         }
 
+        break;
+
     }
-    
+
 }
 
+    if(count==0){
 
+        printf("%d %d %d\n",-1,-1,-1);
 
-
-
-
-
-    // printf("%d %d %d\n", x, y, z);
+    }
 
 
     return 0;
