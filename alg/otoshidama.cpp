@@ -26,21 +26,24 @@ for(int x = 0; x <= N; x++)
 
                 printf("%d %d %d\n",x,y,z);
                 count++;
-                break;
+                // break;
+                return 0;
+
+            
 
             }
 
-        }
-
-        break;
+        // break;
 
     }
+
 
 }
 
     if(count==0){
 
-        printf("%d %d %d\n",-1,-1,-1);
+        // printf("%d %d %d\n",-1,-1,-1);
+        puts("-1,-1,-1");
 
     }
 
@@ -50,7 +53,7 @@ for(int x = 0; x <= N; x++)
 }
 
 
-
+}
 
 
 
