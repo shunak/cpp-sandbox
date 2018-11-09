@@ -9,7 +9,7 @@ int main(){
     scanf("%d %d",&N, &Y);
 
     
-// 全ての組み合わせを求める
+// 全ての組み合わせを求める(LTEにはなる)
 for(int x = 0; x <= N; x++)
 {
     
@@ -25,27 +25,19 @@ for(int x = 0; x <= N; x++)
             if (N==sum && Y==otoshidama) {
 
                 printf("%d %d %d\n",x,y,z);
-                count++;
-                // break;
                 return 0;
 
             
 
             }
 
-        // break;
 
     }
 
 
 }
 
-    if(count==0){
-
-        // printf("%d %d %d\n",-1,-1,-1);
-        puts("-1,-1,-1");
-
-    }
+    puts("-1 -1 -1");
 
 
     return 0;
