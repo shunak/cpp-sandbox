@@ -5,7 +5,6 @@
 int main()
 {   
 
-    
     struct list{
         char value[100];
         int next=-1;
@@ -16,14 +15,12 @@ int main()
     int ls = 0;
     int First = -1;
 
-    List[ls].value = mvalue;
 
+    scanf("%s\n",&mvalue);
 
+    // List.value[100] = mvalue;
 
-
-
-
-
+    // printf("%s\n",List.value[100]);
 
     return 0;
 }
