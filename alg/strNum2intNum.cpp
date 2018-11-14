@@ -25,12 +25,12 @@ int henkan(char M){
         i+=1;
     }
 
-    if(i==10){
-        return 0+2;
-    }else{
-        return i+2;
-    }
-    // return i%10;
+    // if(i==10){
+    //     return 0;
+    // }else{
+    //     return i;
+    // }
+    return i%10;
 }
 
 
