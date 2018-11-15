@@ -14,7 +14,7 @@ char T[100000], buf[100000], S[100000];
 
 int main()
 {
-    // vector<char> data;
+    vector<string> data;
     vector<char> box;
 
     scanf("%s",S);
@@ -28,32 +28,42 @@ int main()
         box.push_back(S[i]);
 
     }
-
-
-    printf("%s\n",&box[0]);
-
-    char data[][8] = {"dream","erase","eraser","dreamer"};
-
-    printf("%s\n",&data[0][0]);
     
-    int count=0;
-    int i=0;
-    while(i<5){
-
-        if (box[i]==data[0][i]) {
-            count++;
-        }
-        i++;
-    }
-
-    // judge
-    if (count==5) {
+    
+    if (&box[0]=="dream") {
         printf("%s\n","Yes");
     }else{
         printf("%s\n","no");
     }
+    
+    
+
+    // for(int i = 0; i < 5; i++)
+    // {
+    
+    //     // printf("%c\n",box[i]);
+    // }
+ printf("%s\n",&box[0]);
 
 
+
+
+
+    data.push_back("dream");
+    data.push_back("erase");
+    data.push_back("eraser");
+    data.push_back("dreamer");
+
+    // strcat(data[0],data[1]);
+    // strcpy(buf,data[0]);
+    // strcat(buf,data[1]);
+    // printf("%s\n",buf);
+
+    int c = data.size();
+    for(int i = 0; i < c; i++)
+    {
+        printf("%c\n",&data[0]);
+    }
 
     return 0;
 
