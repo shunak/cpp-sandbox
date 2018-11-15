@@ -26,20 +26,28 @@ int main()
     {
         // S[i]);
         box.push_back(S[i]);
+
+    }
+    
+    
+    if (&box[0]=="dream") {
+        printf("%s\n","Yes");
+    }else{
+        printf("%s\n","no");
     }
     
     
 
     // for(int i = 0; i < 5; i++)
     // {
-        
+    
     //     // printf("%c\n",box[i]);
     // }
  printf("%s\n",&box[0]);
 
 
 
-    
+
 
     data.push_back("dream");
     data.push_back("erase");
