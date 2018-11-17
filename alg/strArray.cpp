@@ -24,7 +24,6 @@ int main(void)
     };
     int max_uta = sizeof(tanka) / sizeof(tanka[0]);
     int i;
-
     for (i = 0; i < max_uta; i++)
     {
         ku_out(tanka[i]);
