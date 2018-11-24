@@ -22,13 +22,11 @@ int main()
 
     int lenInput = strlen(S);
 
-    for(int i = 0; i < 5; i++)
+    for(int i = 0; i < lenInput ; i++)
     {
         // S[i]);
         box.push_back(S[i]);
-
     }
-
 
     printf("%s\n",&box[0]);
 
@@ -38,18 +36,20 @@ int main()
     
     int count=0;
     int i=0;
-    while(i<5){
+    while(i<lenInput){
 
-        if (box[i]==data[0][i]) {
+        if (box[i]==data[2][i]) {
             count++;
         }
+
         i++;
+        
     }
 
 
 
     // judge
-    if (count==5) {
+    if (count==lenInput) {
         printf("%s, %d\n","Yes",count);
     }else{
         printf("%s, %d\n","no",count);
