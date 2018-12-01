@@ -18,30 +18,28 @@ int main(void){
     int x;
     int y;
 
-    // int count;
-    // count=0;
-
-    // 座標位置の宣言と初期化
-    int pos[2]={0,0};
+    int count;
+    count=0;
 
     for(int i = 0; i < N; i++)
     {
         scanf("%d %d %d",&t,&x,&y);
 
+        // tの回数だけ+1か-1ができる
+        int x_;
+        int y_;
 
         // 一度目のループのときだけ変数宣言する
-        // 原点の座標の定義宣言
-        // int pos_x;
-        // int pos_y;
-
         // if (i==0) {
-        //     pos_y=0;
-        //     pos_x=0;
+
+            // 原点の座標の定義宣言
+            int pos_x;
+            pos_x=0;
+            int pos_y;
+            pos_y=0;
+            int pos[2]={pos_x,pos_y};
+
         // }
-
-        // 原点の座標の定義宣言
-        // int pos[2]={pos_x,pos_y};
-
 
             // 上下左右全検索
             for(int right = 0; right <= t; right++)
@@ -61,17 +59,10 @@ int main(void){
 
                             
                             if (pos[0]==x&&pos[1]==y) {
-                                pos[0]=x;
-                                pos[1]=y;
-                                // continue;
-                                break;
-                                // puts("Yes");
-                                // return 0;
-                            // }else{
+                                // pos[0]=x;
 
-                                // puts("Yes");
-                                // return 0;
-
+                                puts("Yes");
+                                return 0;
                             }
                             
 
@@ -81,8 +72,6 @@ int main(void){
 
                 }
 
-
-                // break;
             }
 
 
@@ -92,12 +81,7 @@ int main(void){
 
     }
 
-    
-    if (pos[0]==x&&pos[1]==y) {
-        puts("Yes");
-    }else{
-        puts("No");
-    }
+    puts("No");
 
 
     return 0;
