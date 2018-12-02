@@ -18,64 +18,46 @@ int main(void){
     int x;
     int y;
 
-    int count;
-    count=0;
+    // int count;
+    // count=0;
 
-    for(int i = 0; i < N; i++)
-    {
-        scanf("%d %d %d",&t,&x,&y);
+    // 座標位置の宣言と初期化
+    int pos[2]={0,0};
 
-        // tの回数だけ+1か-1ができる
-        int x_;
-        int y_;
+    // t>=1という条件があるので、座標はすくなくとも
+    // 以下のいずれか。
+    int pos_right[2]={1,0};
+    int pos_up[2]={0,1};
+    int pos_left[2]={-1,0};
+    int pos_down[2]={0,-1};
 
-        // 原点の座標の定義宣言
-        int pos_x;
-        pos_x=0;
-        int pos_y;
-        pos_y=0;
-        int pos[2]={pos_x,pos_y};
+    // 3 1 2
+    // 6 1 1
+    // というのは、
+    //  ｛0,0｝に３回1か-1を足して、1,2にできて、
+    // かつ、1,2に6-3回=3回1か-1足して1,1にできるか
+    // という問題になる
 
-
-            // 上下左右全検索
-            for(int right = 0; right <= t; right++)
-            {
-                pos[0]++;
-                printf("%d\n",pos[0]);
-                for(int up = 0; up <= t-right; up++)
-                {
-                    pos[1]++;
-                    printf("%d\n",pos[1]);
-                    // for(int left = 0; left <= t-right-up; left++)
-                    // {
-                    //     pos_x--;
-                    //     for(int down = 0; down <= t-right-up-left; down++)
-                    //     {
-                    //         pos_y--;
-
-                            
-                            if (pos[0]==x&&pos[1]==y) {
-                                puts("Yes");
-                                return 0;
-                            }
-                            
-
-                    //     }
-
-                    // }
-
-                }
-
-            }
-
-
+    // 2^3の8通り×２の16通りある
     
 
 
 
+    for(int i = 0; i < N; i++)
+    {
+        // 標準入力から値の読み込み
+        scanf("%d %d %d",&t,&x,&y);
+
+
+       
     }
 
-    puts("No");
+    
+    if (pos[0]==x&&pos[1]==y) {
+        puts("Yes");
+    }else{
+        puts("No");
+    }
 
 
     return 0;
