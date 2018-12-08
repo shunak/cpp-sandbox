@@ -39,20 +39,20 @@ int main(void){
     // という問題になる
 
     // 2^3の8通り×２の16通りある
-    
-
-
 
     for(int i = 0; i < N; i++)
     {
         // 標準入力から値の読み込み
         scanf("%d %d %d",&t,&x,&y);
 
+        
 
-       
+
+
+
     }
 
-    
+
     if (pos[0]==x&&pos[1]==y) {
         puts("Yes");
     }else{
