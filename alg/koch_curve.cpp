@@ -11,7 +11,7 @@ int koch(int n, Point a, Point b){
 
     Point s, t, u;
     double degree = M_PI * 60.0 / 180.0; // 度からラジアン単位へ変換
-    static int count=0;
+    static int count=0; // 再帰するたびに初期化されないように、静的変数として定義
 
     s.x = (2.0 * a.x + 1.0 * b.x)/3.0;
     s.y = (2.0 * a.y + 1.0 * b.y)/3.0;
