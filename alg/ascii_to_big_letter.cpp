@@ -30,7 +30,7 @@ int main(void)
 }
 
 /* 英小文字を大文字に変換 */
-#define Mac_ToBig ((unsigned char)0xDF) /* 小文字→大文字 */　//0xDF=1101 1111
+#define Mac_ToBig ((unsigned char)0xDF) /* 小文字→大文字 0xDF(16) = 1101 1111(2)*/
 #define Mac_SmlA ((unsigned char)'a')
 #define Mac_SmlZ ((unsigned char)'z')
 #define Mac_Nul ((unsigned char)'\0')
