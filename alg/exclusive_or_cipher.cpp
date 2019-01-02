@@ -19,6 +19,7 @@ int main(void)
     puts("\n暗号化後");
     en_decipher(str, max, key); /* 暗号化 */
     std_out(str, max);
+    // printf("\n%s\n",str);// ASCIIコード表でいうところの0x00~0x1Fの領域の制御コードがふくまれるので、文字列として成立しなくなる
     puts("\n復号化後");
     en_decipher(str, max, key); /* 復号化 */
     std_out(str, max);
