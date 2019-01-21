@@ -1,7 +1,7 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 #define MAX 500000
-#define SENTINEL 200000000
+#define SENTINEL 2000000000
 
 int L[MAX/2+2], R[MAX/2+2];
 int cnt;
@@ -21,17 +21,18 @@ void merge(int A[], int n, int left, int mid, int right){
     {
         R[i] = A[mid + i];
     }
-    L[n1] = R[n2] = SENTINEL;
+    L[n1]=SENTINEL;
+    R[n2]=SENTINEL;
     int i = 0, j = 0;
     
-    for(int k = left; k < right; i++)
+    for(int k = left; k < right; k++)
     {
         cnt++;
         
         if (L[i]<=R[j]) {
             A[k]=L[i++];
         }else{
-            A[k]=R[i++];
+            A[k]=R[j++];
         }
     }
 }
@@ -53,22 +54,19 @@ int main(){
     cnt = 0;
 
     cin >> n;
-
-    
-    for(int i = 0; i < n; i++)
+    for(i = 0; i < n; i++)
     {
         cin >> A[i];
     }
-    
+
     mergeSort(A, n, 0, n);
 
-    
-    for(int i = 0; i < n; i++)
+    for(i = 0; i < n; i++)
     {
-        
+
         if (i) cout << " ";
         cout << A[i];
-        
+
     }
     cout << endl;
 
