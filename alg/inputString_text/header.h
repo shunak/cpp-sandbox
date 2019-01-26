@@ -15,6 +15,7 @@ typedef struct
     size_t buf_sz;
 } AssistPrm;
 
+
 /* プロトタイプ宣言 */
 int check_stream(FILE *fp);
 int assist_main(AssistPrm *ap, const char *input_end);
