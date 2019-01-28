@@ -1,6 +1,6 @@
 /* 42_02.h 「 42_00.c 」用ヘッダー・ファイル */
-#ifndef __42_02_h__
-#define __42_02_h__
+#ifndef __header_h__
+#define __header_h__
 
 /* マクロ定義 */
 #define MacStreamSuccess 0 /* ストリーム関数 成功 */
@@ -23,4 +23,4 @@ int text_write(AssistPrm *ap);
 int text_stdout(AssistPrm *ap);
 int input_stdin(const AssistPrm *ap);
 
-#endif /* __42_02_h__ */
+#endif /* __header_h__ */
