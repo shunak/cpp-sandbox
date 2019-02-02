@@ -1,11 +1,13 @@
 #include <stdio.h>
 
-int A[100000];
+#define MAX 100000
+
+int A[MAX];
 
 int p, r;
 
 // プロトタイプ宣言(仮引数定義には、データ型を付与することを忘れずに)
-int partition(int A[100000], int p, int r);
+int partition(int A[MAX], int p, int r);
 
 
 int main(){
@@ -43,7 +45,7 @@ int main(){
 
 
 // パーティション関数の定義
-int partition(int A[100000], int p, int r){
+int partition(int A[MAX], int p, int r){
 
     int x,i,buf,j;
 
@@ -64,7 +66,7 @@ int partition(int A[100000], int p, int r){
     A[i+1] = A[r];
     A[r] = buf;
 
-    return i+1;
+    return i+1;//パーティションの値を返す
 }
 
 
