@@ -8,7 +8,7 @@ int A[MAX];
 int p, r;
 
 // プロトタイプ宣言(仮引数定義には、データ型を付与することを忘れずに)
-int partition(int * A, int p, int r);
+int partition(int p, int r);
 
 
 int main(){
@@ -32,30 +32,11 @@ int main(){
     // 標準出力
     // for (int i = 0; i < n; i++)
     // {
-    ret = partition(A, 0, n-1);
+    ret = partition(0, n-1);
 
-    // printf("%d ", ret);
+    printf("%d ", ret);
     // }
-    // puts("");//改行
-
-    
-    for(int i = 0; i < n; i++)
-    {
-
-        if (i==ret) {
-            printf("[");
-            printf("%d", A[i]);
-            printf("] ");
-        }
-        else
-        {
-            printf("%d ", A[i]);
-        }
-
-    }
-    puts(" ");
-    
-
+    puts("");//改行
 
     // printf("%d\n",A[i]);
 
@@ -65,7 +46,7 @@ int main(){
 
 
 // パーティション関数の定義
-int partition(int * A, int p, int r){
+int partition(int p, int r){
 
     int x,i,buf;
 
@@ -86,7 +67,7 @@ int partition(int * A, int p, int r){
     A[i+1] = A[r];
     A[r] = buf;
 
-    return i+1;//パーティションの値を返す
+    return i+1;//パーティションの値の配列番号を返す
 }
 
 
