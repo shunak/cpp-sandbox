@@ -30,17 +30,11 @@ int main(){
     // 標準出力部分
     for(int i = 0; i < n; i++)
     {
-        // printf(" ");
-        if (i==ret) {
-            printf("[");
-            printf("%d", A[i]);
-            printf("]");
-        }
-        else
-        {
-            printf("%d", A[i]);
-        }
-        printf(" ");
+
+        if(i!=0) printf(" ");
+        if(i==ret) printf("[");
+        printf("%d", A[i]);
+        if(i==ret) printf("]");
 
     }
     printf("\n");
