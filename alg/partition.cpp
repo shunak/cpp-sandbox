@@ -19,45 +19,25 @@ int main(){
     // 標準入力
     scanf("%d",&n);
 
-
     for(int i = 0; i < n; i++)
     {
         scanf("%d",&A[i]);
     }
 
-
     // パーティション関数
-
-
-    // 標準出力
-    // for (int i = 0; i < n; i++)
-    // {
     ret = partition(A, 0, n-1);
 
-    // printf("%d ", ret);
-    // }
-    // puts("");//改行
-
-    
+    // 標準出力部分
     for(int i = 0; i < n; i++)
     {
 
-        if (i==ret) {
-            printf("[");
-            printf("%d", A[i]);
-            printf("] ");
-        }
-        else
-        {
-            printf("%d ", A[i]);
-        }
+        if(i!=0) printf(" ");
+        if(i==ret) printf("[");
+        printf("%d", A[i]);
+        if(i==ret) printf("]");
 
     }
-    puts(" ");
-    
-
-
-    // printf("%d\n",A[i]);
+    printf("\n");
 
 
     return 0;
