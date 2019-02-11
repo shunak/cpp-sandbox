@@ -1,6 +1,6 @@
 /* 45_00.h 「45_00.c」用ヘッダー・ファイル */
-#ifndef __45_00_h__
-#define __45_00_h__
+#ifndef __header_h__
+#define __header_h__
 
 /* 型定義 */
 typedef struct  /* 正方形 */
@@ -46,4 +46,4 @@ typedef struct  /* 四角形の特徴 */
 /* プロトタイプ宣言 */
 int quad_area( const STquadChara * quad );
 
-#endif  /* __45_00_h__ */
+#endif  /* __header_h__ */
