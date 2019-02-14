@@ -21,7 +21,7 @@ int main(void){
 
     for(int i = 0; i < N; i++)
     {
-        scanf("%s %d", &Crd[i].suite, &Crd[i].value); //scanfで改行を含めてしまうと、それも一字になるので注意
+        scanf("%s %d", &Crd[i].suite, &Crd[i].value); //scanfで改行 を含めてしまうと、それも一字になるので注意
     }
 
     // (注意) scanfで文字列を読み込む　→　文字型を渡すなら%cでよいが、配列型の文字を渡すなら%sとする必要がある
