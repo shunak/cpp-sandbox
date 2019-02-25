@@ -112,6 +112,8 @@ void printVec(std::vector<int> &vec)
     // std::cout << std::endl;
 }
 
+
+// クイックソートの安定性判定用
 // 元の順序のままのカード順を取得
 int getOrderDefault(int N, card *B){
 
