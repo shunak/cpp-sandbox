@@ -31,6 +31,7 @@ void quickSort(card *C, int p, int r);
 
 int getOrderDefault(int N, card *B);
 
+void compareVec(std::vector<int> &vec, card *C);
 
 int main(void){
 
@@ -43,7 +44,8 @@ int main(void){
 
     // (注意) scanfで文字列を読み込む　→　文字型を渡すなら%cでよいが、配列型の文字を渡すなら%sとする必要がある
 
-    getOrderDefault(N, &Crd[0]);
+    getOrderDefault(N, Crd);
+    // compareVec();
 
     puts("");
     quickSort(&Crd[-1], 0, N);
@@ -112,6 +114,69 @@ void printVec(std::vector<int> &vec)
     // std::cout << std::endl;
 }
 
+// vectorプリント用
+void printVec_suite(std::vector<char> &vec)
+{
+    // std::cout << "";
+    puts("");
+    for (auto it = vec.begin(); it != vec.end(); ++it)
+    {
+        printf("%c\n", *it);
+    }
+    // std::cout << std::endl;
+}
+void printVec_value(std::vector<int> &vec)
+{
+    // std::cout << "";
+    puts("");
+    for (auto it = vec.begin(); it != vec.end(); ++it)
+    {
+        printf("%d\n", *it);
+    }
+    // std::cout << std::endl;
+}
+
+
+
+void compareVec(std::vector<int> &vec, card *C, int N)
+{
+    int count=0; //counter var
+    vector<char> defOrd(N);//buffer array
+    vector<int> defOrd_v(N);//buffer array
+
+    // compare vector with array
+    while(N>0){
+
+        for (auto it = vec.begin(); it != vec.end(); ++it)
+        {   
+            count=2;
+            if (*it == C[count].value)
+            {
+
+                defOrd[count] = C[count].suite;
+                defOrd_v[count]=C[count].value;
+
+                printVec_suite(defOrd);
+                printVec_value(defOrd_v);
+                // count++;
+                // return;
+
+            }
+            // count++;
+        }
+        // count++;
+
+        N--;
+    }
+
+    printVec_suite(defOrd);
+
+}
+
+
+
+
+
 
 // クイックソートの安定性判定用
 // 元の順序のままのカード順を取得
@@ -132,7 +197,11 @@ int getOrderDefault(int N, card *B){
     defltOrder.erase(unique(defltOrder.begin(), defltOrder.end()),defltOrder.end());
 
     // ベクトルをprintf
-    printVec(defltOrder);
+    // printVec(defltOrder);
+
+    compareVec(defltOrder, B, N);
+
+
 
     return 0;
 

@@ -31,8 +31,7 @@ int main(void){
     }
 
     // (注意) scanfで文字列を読み込む　→　文字型を渡すなら%cでよいが、配列型の文字を渡すなら%sとする必要がある
-
-    // quickSort(Crd.value, 0, N);
+    // quickSort(&Crd[0], 0, N);
     quickSort(&Crd[N], 0, N);
 
     puts("");
