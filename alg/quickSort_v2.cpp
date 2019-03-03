@@ -6,11 +6,6 @@
 
 using namespace std;
 
-
-
-
-
-
 int N;
 // char CardImg[Cnum];
 // int CardNum[Cnum];
@@ -24,40 +19,66 @@ typedef struct{
 
 card Crd[Cnum];
 
+card defCards[Cnum];
+
+
 // プロトタイプ宣言(仮引数定義には、データ型を付与することを忘れずに)
 int partition(card *C, int p, int r);
 
 void quickSort(card *C, int p, int r);
 
-int getOrderDefault(int N, card *B);
+// int getOrderDefault(int N, card *B);
+vector<char> getOrderDefault(int N, card *B);
 
 void compareVec(std::vector<int> &vec, card *C);
 
-int main(void){
+void printVec_suite(std::vector<char> &vec);
+
+
+int main(void)
+{
 
     scanf("%d", &N);
 
     for(int i = 0; i < N; i++)
     {
         scanf("%s %d", &Crd[i].suite, &Crd[i].value); //scanfで改行 を含めてしまうと、それも一字になるので注意
-    }
 
+    }
+    // defCards = Crd;
     // (注意) scanfで文字列を読み込む　→　文字型を渡すなら%cでよいが、配列型の文字を渡すなら%sとする必要がある
 
-    getOrderDefault(N, Crd);
+    // 最初の順番の取得
+    vector<char> defOrd;
+    defOrd = getOrderDefault(N, Crd);
     // compareVec();
 
     puts("");
     quickSort(&Crd[-1], 0, N);
 
-    puts("");
+    // quickSortした結果の絵柄の並び順を配列に確保
+    vector<char> afterOrd(N);
+    for(int i = 0; i < N; i++)
+    {
+        afterOrd[i]=Crd[i].suite;
+    }
+    printVec_suite(afterOrd);
+
+    // もとの順番とクイックソートしたあとの絵柄の順番の比較
+    printVec_suite(defOrd);
+    // 安定性判定
+    if (afterOrd==defOrd) {
+            puts("Stable");
+    }else{
+        puts("Not stable");
+    }
+
     for (int i = 0; i < N; i++)
     {
         printf("%c %d\n",Crd[i].suite, Crd[i].value);
     }
 
     return 0;
-
 }
 
 // パーティション関数の定義
@@ -138,51 +159,66 @@ void printVec_value(std::vector<int> &vec)
 
 
 
-void compareVec(std::vector<int> &vec, card *C, int N)
+// 最初の順番を取得する処理
+vector<char> defVec_(std::vector<int> &vec, card *C, int N)
 {
-    int count=0; //counter var
-    vector<char> defOrd(N);//buffer array
-    vector<int> defOrd_v(N);//buffer array
+    int n = 0;           //counter var
+    vector<char> defOrd(N);  //buffer array
+    vector<int> defOrd_v(N); //buffer array
 
-    // compare vector with array
-    while(N>0){
+    for (auto it = vec.begin(); it != vec.end(); ++it)
+    {
 
-        for (auto it = vec.begin(); it != vec.end(); ++it)
+        for (int i = 0; i < N; i++)
         {
-            count=2;
-            if (*it == C[count].value)
+
+            if (C[i].value ==*it)
             {
 
-                defOrd[count] = C[count].suite;
-                defOrd_v[count]=C[count].value;
+                defOrd[n] = C[i].suite;
+                defOrd_v[n] = C[i].value;
+                n++;
 
-                printVec_suite(defOrd);
-                printVec_value(defOrd_v);
-                // count++;
-                // return;
-
+                // printVec_suite(defOrd);
+                // printVec_value(defOrd_v);
             }
-            // count++;
-        }
-        // count++;
 
-        N--;
+        }
+
     }
 
-    printVec_suite(defOrd);
+    // printVec_suite(defOrd);
+
+
+     // 例
+    // vector<char> ex = {'D','C','H','D','D','S'};
+
+    // if (defOrd==ex) {
+    //     puts("同じ順序です");
+    // }else{
+    //     puts("違います");
+    // }
+
+
+    return defOrd;
+
+
+
 
 }
 
 
-
-
-
-
-// クイックソートの安定性判定用
-// 元の順序のままのカード順を取得
-int getOrderDefault(int N, card *B){
+// judgeOrderStability
+    // クイックソートの安定性判定用
+    // 元の順序のままのカード順を取得
+vector<char> getOrderDefault(int N, card *B){
+    // void getOrderDefault(int N, card *B){
+// vector<char> getOrderDefault(vector<char> dO, int N, card *B){
+// int judgeOrderStability(int N, card *B)
+// {
 
     vector<int> defltOrder(N);
+    vector<char> defOrd;
 
     // 取得したカード番号を読み込む
     for(int i = 0; i < N; i++)
@@ -199,10 +235,23 @@ int getOrderDefault(int N, card *B){
     // ベクトルをprintf
     // printVec(defltOrder);
 
-    compareVec(defltOrder, B, N);
+    defOrd = defVec_(defltOrder, B, N);
+    // dO = defVec_(defltOrder, B, N);
 
 
+    // vector<char> ex = {'D','C','H','D','D','S'};
 
-    return 0;
+    // // if (defOrd==ex) {
+    //     puts("同じ順序です");
+    // }else{
+    //     puts("違います");
+    // }
+
+
+    // return dO;
+    return defOrd;
+
+
+    // return 0;
 
 }
