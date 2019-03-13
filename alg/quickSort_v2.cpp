@@ -48,12 +48,11 @@ int main(void)
     // defCards = Crd;
     // (注意) scanfで文字列を読み込む　→　文字型を渡すなら%cでよいが、配列型の文字を渡すなら%sとする必要がある
 
-    // 最初の順番の取得
+    // 元の順番の絵柄を配列（vector型）として取得（vector型のほうが配列を扱いやすい）
     vector<char> defOrd;
     defOrd = getOrderDefault(N, Crd);
-    // compareVec();
 
-    puts("");
+    // puts("");
     quickSort(&Crd[-1], 0, N);
 
     // quickSortした結果の絵柄の並び順を配列に確保
@@ -62,10 +61,10 @@ int main(void)
     {
         afterOrd[i]=Crd[i].suite;
     }
-    printVec_suite(afterOrd);
+    // printVec_suite(afterOrd);
 
     // もとの順番とクイックソートしたあとの絵柄の順番の比較
-    printVec_suite(defOrd);
+    // printVec_suite(defOrd);
     // 安定性判定
     if (afterOrd==defOrd) {
             puts("Stable");
