@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 
-#define Cnum 1000000000
+#define Cnum 10000000
 
 using namespace std;
 
@@ -67,7 +67,7 @@ int main(void)
     // printVec_suite(defOrd);
     // 安定性判定
     if (afterOrd==defOrd) {
-            puts("Stable");
+        puts("Stable");
     }else{
         puts("Not stable");
     }
@@ -245,7 +245,6 @@ vector<char> getOrderDefault(int N, card *B){
     // }else{
     //     puts("違います");
     // }
-
 
     // return dO;
     return defOrd;
