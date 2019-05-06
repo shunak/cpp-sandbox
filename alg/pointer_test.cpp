@@ -14,10 +14,13 @@ int main(){
 
 
     const int i = 4;
-    int *pi = &i;
+    int   *pi   = &i;
 
     *pi = 2;
 
 
+    printf("%d\n",i);
     return 0;
+
+
 }
