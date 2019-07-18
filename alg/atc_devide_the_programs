@@ -4,59 +4,55 @@
 using namespace std;
 
 int main() {
+lude
+  int N,i,d[NUM],pos,sorted_first[NUM],sorted_second[NUM],j,k,m,buf;
 
-  int N,i,d[NUM],pos,sorted[NUM],j,k;
+      scanf("%d",&N);
 
-  scanf("%d",&N);
+          for(i=0; i<N; i++){
 
-  for(i=0; i<N; i++){
+                   scanf("%d",&d[i]);
 
-    scanf("%d",&d[i]);
+                       }
 
-  }
+                           //昇順整列アルゴリズム(バブルソート)
+                             for(m=0;m<N-1;m++){
 
-  //昇順整列アルゴリズム
-  pos = d[0];
-  k=0;
+                                     for(i=0;i<N;i++){
 
-  for(i=0;i<N;i++){
+                                           pos=d[i];
+                                                 j=i+1;
 
-    j=i+1;
+                                                         if(pos>=d[j]){
 
-   if(pos>=d[j]){
+                                                                   buf=d[i];
+                                                                             d[i]=d[j];
+                                                                                       d[j]=buf;
 
-     sorted[k]=d[j];
-     k++;
+                                                                                               }
 
-   }else{
+                                                                                                   }
 
-     sorted[k]=pos;
-
-   }
-  }
-
-
+                                                                                                       }
 
 
+                                                                                                             for(i=0;i<N;i++){
 
+                                                                                                                       printf("%d ",d[i]);
 
-
-
-
+                                                                                                                           }
 
 
 
+                                                                                                                             }}}}}}}
 
 
 
-  for(i=0;i<N;i++){
-
-    printf("%d ",sorted[i]);
-
-  }
 
 
-}
+
+
+
 
 
 
